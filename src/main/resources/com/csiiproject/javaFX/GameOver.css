@@ -1,8 +1,0 @@
-@font-face {
-    -fx-font-family: "OptimusPrinceps";
-    src: url("fonts/OptimusPrinceps.ttf") format('truetype');
-}
-
-#lostLabel{
-    -fx-font: 40px "OptimusPrinceps";
-}
