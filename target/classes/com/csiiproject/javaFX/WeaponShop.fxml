@@ -42,12 +42,12 @@
                         <Image url="@WeaponShop/chest.png" />
                     </image>
                 </ImageView>
-                <Label layoutX="6.0" layoutY="316.0" prefHeight="127.0" prefWidth="200.0" text="Name: Anti Titan  Shell&#10;Type: Piercing Cannon&#10;Price: 25&#10;Damage:    10&#10;" textFill="#fff600">
+                <Label layoutX="3.0" layoutY="306.0" prefHeight="127.0" prefWidth="200.0" text="Name: Anti Titan  Shell&#10;Type: Piercing Cannon&#10;Price: 25&#10;Damage:    10&#10;" textFill="#fff600">
                     <font>
                         <Font size="19.0" />
                     </font>
                 </Label>
-                <Label layoutX="245.0" layoutY="316.0" prefHeight="127.0" prefWidth="216.0" text="Name: Long Range Spear&#10;Type: Sniper Cannon&#10;Price: 25&#10;Damage Points: 35&#10;" textFill="#fff600">
+                <Label layoutX="245.0" layoutY="306.0" prefHeight="127.0" prefWidth="216.0" text="Name: Long Range Spear&#10;Type: Sniper Cannon&#10;Price: 25&#10;Damage Points: 35&#10;" textFill="#fff600">
                     <font>
                         <Font size="19.0" />
                     </font>
@@ -102,12 +102,13 @@
                         <Image url="@WeaponShop/mine.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="bBuy1" layoutX="55.0" layoutY="461.0" mnemonicParsing="false" text="Buy Weapon" />
-                <Button fx:id="bBuy2" layoutX="339.0" layoutY="461.0" mnemonicParsing="false" text="Buy Weapon" />
-                <Button fx:id="bBuy3" layoutX="636.0" layoutY="459.0" mnemonicParsing="false" text="Buy Weapon" />
-                <Button fx:id="bBuy4" layoutX="924.0" layoutY="458.0" mnemonicParsing="false" text="Buy Weapon" />
-            <Button fx:id="bClose" layoutX="954.0" layoutY="13.0" mnemonicParsing="false" text="Close Shop" />
+                <Button fx:id="bBuy1" layoutX="61.0" layoutY="459.0" mnemonicParsing="false" onAction="#purchaseAntiTitanShell" text="Purchase" />
+                <Button fx:id="bBuy2" layoutX="349.0" layoutY="461.0" mnemonicParsing="false" onAction="#purchaseSpear" text="Purchase" />
+                <Button fx:id="bBuy3" layoutX="643.0" layoutY="459.0" mnemonicParsing="false" onAction="#purchaseCannon" text="Purchase" />
+                <Button fx:id="bBuy4" layoutX="932.0" layoutY="459.0" mnemonicParsing="false" onAction="#purchaseTrap" text="Purchase" />
+            <Button fx:id="bClose" layoutX="954.0" layoutY="13.0" mnemonicParsing="false" onAction="#closeShop" text="Close Shop" />
             </children>
         </Pane>
     </children>
 </AnchorPane>
+

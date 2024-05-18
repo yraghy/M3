@@ -25,7 +25,7 @@ public class hardController {
     Battle hardGame;
 
 
-    public void buy(ActionEvent e) throws IOException {AlertBox.weaponShop("weapon shop");}
+    public void buy(ActionEvent e) throws Exception {AlertBox.weaponShop("weapon shop");}
 
     public void passTurn(ActionEvent e) throws IOException {hardGame.passTurn();}
 

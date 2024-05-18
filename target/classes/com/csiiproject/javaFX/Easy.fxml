@@ -35,15 +35,15 @@
                 <RowConstraints fx:id="lane3" maxHeight="183.0" minHeight="113.0" prefHeight="113.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="eLane1Buy" mnemonicParsing="false" onAction="#buy" text="Buy weapon" GridPane.columnIndex="10" GridPane.halignment="CENTER" />
-                  <Button fx:id="eBuy2" layoutX="966.0" layoutY="73.0" mnemonicParsing="false" onAction="#buy" text="Buy weapon" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Button fx:id="eBuy3" layoutX="966.0" layoutY="223.0" mnemonicParsing="false" onAction="#buy" text="Buy weapon" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="lane1buy" mnemonicParsing="false" onAction="#buy" text="Buy weapon" GridPane.columnIndex="10" GridPane.halignment="CENTER" />
+                  <Button fx:id="lane2buy" layoutX="966.0" layoutY="73.0" mnemonicParsing="false" onAction="#buy2" text="Buy weapon" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="lane3buy" layoutX="966.0" layoutY="223.0" mnemonicParsing="false" onAction="#buy3" text="Buy weapon" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                   <ImageView fitHeight="120.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                      <image>
                         <Image url="@lane%20path.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="192.0" layoutX="295.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="lane1weapon" fitHeight="120.0" fitWidth="192.0" layoutX="295.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@lane%20path.png" />
                      </image>
@@ -63,7 +63,7 @@
                         <Image url="@lane%20path.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="192.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                  <ImageView fx:id="lane2weapon" fitHeight="120.0" fitWidth="192.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                      <image>
                         <Image url="@lane%20path.png" />
                      </image>
@@ -88,7 +88,7 @@
                         <Image url="@lane%20path.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="192.0" layoutX="10.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                  <ImageView fx:id="lane3weapon" fitHeight="120.0" fitWidth="192.0" layoutX="10.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                      <image>
                         <Image url="@lane%20path.png" />
                      </image>

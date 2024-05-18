@@ -12,8 +12,8 @@ public class Lane implements Comparable<Lane> {
 	private final Wall laneWall;
 	private int dangerLevel;
 
-	public Lane(Wall laneWall) {
-		this.laneWall = laneWall;
+	public Lane() {
+		this.laneWall = new Wall(100);
 		titans = new PriorityQueue<Titan>();
 		weapons = new ArrayList<Weapon>();
 		dangerLevel = 0;
@@ -78,7 +78,16 @@ public class Lane implements Comparable<Lane> {
 	}
 
 	public boolean isLaneLost() {
-		return laneWall.isDefeated();
+    if (this.laneWall == null) {
+        System.out.println("laneWall is null for Lane object: " + this);
+        return false;  // Or throw an exception
+    }
+    return this.laneWall.isDefeated();
+}
+
+	@Override
+	public String toString() {
+		return "Lane[dangerLevel=" + dangerLevel + ", laneWall=" + laneWall + "]";
 	}
 
 	public void updateLaneDangerLevel() {

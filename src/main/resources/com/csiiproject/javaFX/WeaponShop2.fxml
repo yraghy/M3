@@ -8,46 +8,46 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="1052.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="1052.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.csiiproject.javaFX.Controller">
     <children>
         <Pane layoutX="400.0" layoutY="171.0" prefHeight="612.0" prefWidth="1052.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <ImageView fitHeight="609.0" fitWidth="1052.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@background.png" />
+                        <Image url="@WeaponShop/background.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="21.0" fitWidth="1052.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@chest.png" />
+                        <Image url="@WeaponShop/chest.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="21.0" fitWidth="1052.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@chest.png" />
+                        <Image url="@WeaponShop/chest.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="57.0" fitWidth="1058.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@brown2.png" />
+                        <Image url="@WeaponShop/brown2.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="214.0" fitWidth="296.0" layoutX="530.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@chest.png" />
+                        <Image url="@WeaponShop/chest.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="214.0" fitWidth="296.0" layoutX="819.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@chest.png" />
+                        <Image url="@WeaponShop/chest.png" />
                     </image>
                 </ImageView>
-                <Label layoutX="6.0" layoutY="316.0" prefHeight="127.0" prefWidth="200.0" text="Name: Anti Titan  Shell&#10;Type: Piercing Cannon&#10;Price: 25&#10;Damage:    10&#10;" textFill="#fff600">
+                <Label layoutX="3.0" layoutY="306.0" prefHeight="127.0" prefWidth="200.0" text="Name: Anti Titan  Shell&#10;Type: Piercing Cannon&#10;Price: 25&#10;Damage:    10&#10;" textFill="#fff600">
                     <font>
                         <Font size="19.0" />
                     </font>
                 </Label>
-                <Label layoutX="245.0" layoutY="316.0" prefHeight="127.0" prefWidth="216.0" text="Name: Long Range Spear&#10;Type: Sniper Cannon&#10;Price: 25&#10;Damage Points: 35&#10;" textFill="#fff600">
+                <Label layoutX="245.0" layoutY="306.0" prefHeight="127.0" prefWidth="216.0" text="Name: Long Range Spear&#10;Type: Sniper Cannon&#10;Price: 25&#10;Damage Points: 35&#10;" textFill="#fff600">
                     <font>
                         <Font size="19.0" />
                     </font>
@@ -64,17 +64,17 @@
                 </Label>
                 <ImageView fitHeight="214.0" fitWidth="296.0" layoutX="234.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@chest.png" />
+                        <Image url="@WeaponShop/chest.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="193.0" fitWidth="342.0" layoutX="-75.0" layoutY="421.0">
                     <image>
-                        <Image url="@chest.png" />
+                        <Image url="@WeaponShop/chest.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="20.0" fitWidth="1038.0" layoutX="4.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@brown2.png" />
+                        <Image url="@WeaponShop/brown2.png" />
                     </image>
                 </ImageView>
                 <Label contentDisplay="CENTER" layoutX="291.0" layoutY="-31.0" prefHeight="103.0" prefWidth="471.0" text="Anti Titan Armory" textAlignment="CENTER" textFill="WHITE">
@@ -84,29 +84,29 @@
                 </Label>
                 <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="593.0" layoutY="486.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@cannon.png" />
+                        <Image url="@WeaponShop/cannon.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="201.0" fitWidth="228.0" layoutX="-11.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@antiTitanShell.png" />
+                        <Image url="@WeaponShop/antiTitanShell.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="179.0" fitWidth="198.0" layoutX="285.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@spear.png" />
+                        <Image url="@WeaponShop/spear.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="60.0" fitWidth="134.0" layoutX="899.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@mine.png" />
+                        <Image url="@WeaponShop/mine.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="bBuy1" layoutX="61.0" layoutY="461.0" mnemonicParsing="false" onAction="#purchaseAntiTitanShell" prefHeight="25.0" prefWidth="74.0" text="Purchase" />
-                <Button fx:id="bBuy2" layoutX="347.0" layoutY="461.0" mnemonicParsing="false" onAction="#purchaseSpear" prefHeight="25.0" prefWidth="74.0" text="Purchase" />
-                <Button fx:id="bBuy3" layoutX="643.0" layoutY="458.0" mnemonicParsing="false" onAction="#purchaseCannon" text="Purchase" />
-                <Button fx:id="bBuy4" layoutX="932.0" layoutY="458.0" mnemonicParsing="false" text="Purchase" />
-            <Button fx:id="b1" layoutX="969.0" layoutY="13.0" mnemonicParsing="false" text="Close Shop" />
+                <Button fx:id="bBuy1" layoutX="61.0" layoutY="459.0" mnemonicParsing="false" onAction="#purchaseAntiTitanShell" text="Purchase" />
+                <Button fx:id="bBuy2" layoutX="349.0" layoutY="461.0" mnemonicParsing="false" onAction="#purchaseSpear" text="Purchase" />
+                <Button fx:id="bBuy3" layoutX="643.0" layoutY="459.0" mnemonicParsing="false" onAction="#purchaseCannon" text="Purchase" />
+                <Button fx:id="bBuy4" layoutX="932.0" layoutY="459.0" mnemonicParsing="false" onAction="#purchaseTrap" text="Purchase" />
+            <Button fx:id="bClose" layoutX="954.0" layoutY="13.0" mnemonicParsing="false" onAction="#closeShop" text="Close Shop" />
             </children>
         </Pane>
     </children>

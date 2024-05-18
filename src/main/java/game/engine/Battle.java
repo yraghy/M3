@@ -2,9 +2,8 @@ package game.engine;
 
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
-import game.engine.*;
-import game.engine.base.Wall;
 import game.engine.dataloader.DataLoader;
 import game.engine.exceptions.InsufficientResourcesException;
 import game.engine.exceptions.InvalidLaneException;
@@ -14,6 +13,7 @@ import game.engine.titans.TitanRegistry;
 import game.engine.weapons.factory.FactoryResponse;
 import game.engine.weapons.factory.WeaponFactory;
 import game.engine.weapons.*;
+import javafx.scene.control.Button;
 
 import static java.util.Collections.sort;
 
@@ -133,10 +133,14 @@ public class Battle {
 	
 	}
 
+	public Battle() throws IOException{
+		this(0, 0, 9, 3, 250);
+	}
+
 	private void initializeLanes(int numOfLanes) {
 		
 		for(int i = 0 ; i < numOfLanes;i++) {
-			Lane l = new Lane(new Wall(WALL_BASE_HEALTH));
+			Lane l = new Lane();
 			originalLanes.add(l);
 			lanes.add(l);
 			
@@ -161,7 +165,7 @@ public class Battle {
             weaponRes = weaponFactory.buyWeapon(resourcesGathered, weaponCode);
         } catch (InsufficientResourcesException e) {
             try {
-                throw new InsufficientResourcesException("Not enoguh resources to buy weapon", e.getResourcesProvided());
+                throw new InsufficientResourcesException("Not enough resources to buy weapon", e.getResourcesProvided());
             } catch (InsufficientResourcesException ex) {
                 throw new RuntimeException(ex);
             }
@@ -260,7 +264,7 @@ public class Battle {
 		else if (numberOfTurns < 30)
 			battlePhase = BattlePhase.INTENSE;
 
-		else if ((numberOfTurns > 29)) {
+		else {
 			if (numberOfTurns > 30 && numberOfTurns % 5 == 0) {
 				battlePhase = BattlePhase.GRUMBLING;
 				numberOfTitansPerTurn *= 2;
@@ -292,6 +296,51 @@ public class Battle {
 				flag = false;
 		}
 		return flag;
+	}
+
+	public Button lane1buy;
+	public Button lane2buy;
+	public Button lane3buy;
+
+
+	public Lane getLane(int laneNumber) {
+    if (laneNumber < 1 || laneNumber > 3) {
+        throw new IllegalArgumentException("Lane number must be between 1 and 3");
+    }
+		Lane[] laneArray = lanes.toArray(new Lane[0]);
+		return laneArray[laneNumber - 1];
+}
+
+	public Button bBuy1;
+	public Button bBuy2;
+	public Button bBuy3;
+	public Button bBuy4;
+
+	public AtomicInteger selectedWeaponCode = new AtomicInteger();
+	public Battle(WeaponFactory weaponFactory, HashMap<Integer, TitanRegistry> titansArchives, ArrayList<Titan> approachingTitans, PriorityQueue<Lane> lanes, ArrayList<Lane> originalLanes) {
+        this.weaponFactory = weaponFactory;
+        this.titansArchives = titansArchives;
+        this.approachingTitans = approachingTitans;
+        this.lanes = lanes;
+        this.originalLanes = originalLanes;
+        // ...
+
+
+		bBuy1 = new Button();
+		bBuy1.setOnAction(e -> selectedWeaponCode.set(1));
+
+		bBuy2 = new Button();
+		bBuy2.setOnAction(e -> selectedWeaponCode.set(2));
+
+		bBuy3 = new Button();
+		bBuy3.setOnAction(e -> selectedWeaponCode.set(3));
+
+		bBuy4 = new Button();
+		bBuy4.setOnAction(e -> selectedWeaponCode.set(4));
+	}
+
+	public int getCode() {
+		return selectedWeaponCode.get();
 	}
 
 }

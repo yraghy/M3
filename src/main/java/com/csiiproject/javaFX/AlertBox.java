@@ -1,6 +1,7 @@
 package com.csiiproject.javaFX;
 
 import game.engine.lanes.Lane;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -13,6 +14,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
+import java.util.Optional;
 
 public class AlertBox {
 
@@ -39,34 +43,118 @@ public class AlertBox {
 
 
 
-    public static void weaponShop(String title) throws IOException {
-        Stage box = new Stage();
-        Parent root = FXMLLoader.load(AlertBox.class.getResource("WeaponShop.fxml"));
-        //Blocks user interaction with other windows until issue is resolved
-        box.initModality(Modality.APPLICATION_MODAL);
+
+    public static void weaponShop(String title) {
+    Stage box = new Stage();
+    box.initModality(Modality.APPLICATION_MODAL);
+
+    try {
+        // Use a relative path to the FXML file
+        FXMLLoader loader = new FXMLLoader(AlertBox.class.getResource("/com/csiiproject/javaFX/WeaponShop.fxml"));
+        Parent root = loader.load();
+
         box.setTitle(title);
         box.setWidth(1052);
-        box.setHeight(670);
+        box.setHeight(635);
 
-        Button b1 = (Button)(root.lookup("#bClose"));
-        b1.setOnAction(e -> box.close());
-        box.setTitle(title);
         Scene scene = new Scene(root);
         box.setScene(scene);
         box.setResizable(false);
         box.setFullScreen(false);
+
+        // Get the controller instance if needed
+        Controller controller = loader.getController();
+        if (controller != null) {
+            // Do something with the controller
+        }
+
         box.showAndWait();
+    } catch (IOException e) {
+        System.err.println("Failed to load WeaponShop.fxml: " + e.getMessage());
+        e.printStackTrace();
     }
+}
+
+    public static void weaponShop2(String title) {
+        Stage box = new Stage();
+        box.initModality(Modality.APPLICATION_MODAL);
+
+        try {
+            // Use a relative path to the FXML file
+            FXMLLoader loader = new FXMLLoader(AlertBox.class.getResource("/com/csiiproject/javaFX/WeaponShop.fxml"));
+            Parent root = loader.load();
+
+            box.setTitle(title);
+            box.setWidth(1052);
+            box.setHeight(635);
+
+            Scene scene = new Scene(root);
+            box.setScene(scene);
+            box.setResizable(false);
+            box.setFullScreen(false);
+
+            // Get the controller instance if needed
+            Controller controller = loader.getController();
+            if (controller != null) {
+                // Do something with the controller
+            }
+
+            box.showAndWait();
+        } catch (IOException e) {
+            System.err.println("Failed to load WeaponShop.fxml: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public static void weaponShop3(String title) {
+        Stage box = new Stage();
+        box.initModality(Modality.APPLICATION_MODAL);
+
+        try {
+            // Use a relative path to the FXML file
+            FXMLLoader loader = new FXMLLoader(AlertBox.class.getResource("/com/csiiproject/javaFX/WeaponShop.fxml"));
+            Parent root = loader.load();
+
+            box.setTitle(title);
+            box.setWidth(1052);
+            box.setHeight(635);
+
+            Scene scene = new Scene(root);
+            box.setScene(scene);
+            box.setResizable(false);
+            box.setFullScreen(false);
+
+            // Get the controller instance if needed
+            Controller controller = loader.getController();
+            if (controller != null) {
+                // Do something with the controller
+            }
+
+            box.showAndWait();
+        } catch (IOException e) {
+            System.err.println("Failed to load WeaponShop.fxml: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
 
     public static void gameOver(String title) throws IOException{
         Stage box = new Stage();
-        Parent root = FXMLLoader.load(AlertBox.class.getResource("GameOver.fxml"));
-        //Blocks user interaction with other windows until issue is resolved
+        URL url = AlertBox.class.getResource("GameOver.fxml");
+        if (url == null) {
+        throw new RuntimeException("Resource GameOver.fxml not found");
+        }
+         Parent root = FXMLLoader.load(url);        //Blocks user interaction with other windows until issue is resolved
         box.initModality(Modality.APPLICATION_MODAL);
         box.setTitle(title);
         box.setTitle(title);
         Scene scene = new Scene(root);
-        String loseCss = AlertBox.class.getResource("gameOver.css").toExternalForm();
+        URL cssUrl = AlertBox.class.getResource("gameOver.css");
+        if (cssUrl == null) {
+            throw new RuntimeException("Resource gameOver.css not found");
+        }
+        String loseCss = cssUrl.toExternalForm();
         scene.getStylesheets().add(loseCss);
         box.setScene(scene);
         box.setResizable(false);

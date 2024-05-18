@@ -11,15 +11,21 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
 
 public class Main extends Application {
 
     private ImageView backgroundImage;
 
     public void start(Stage window) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("CleanStart.fxml"));
+        URL url = getClass().getResource("CleanStart.fxml");
+        if (url == null) {
+            throw new RuntimeException("Resource CleanStart.fxml not found");
+        }
+        Parent root = FXMLLoader.load(url);
         Scene scene = new Scene(root);
-        String css = this.getClass().getResource("main.css").toExternalForm();
+        String css = Objects.requireNonNull(this.getClass().getResource("main.css")).toExternalForm();
         scene.getStylesheets().add(css); //adds css stylesheet to main menu scene
         window.setTitle("Attack On Titan: Utopia");
         window.setScene(scene);
