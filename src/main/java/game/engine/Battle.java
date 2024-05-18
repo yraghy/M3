@@ -37,6 +37,9 @@ public class Battle {
 	private int score;
 	private int titanSpawnDistance;
 
+	public Battle() throws IOException{
+		this(0, 0, 9, 3, 250);
+	}
 
 	public int getNumberOfTurns() {
 		return numberOfTurns;
@@ -294,4 +297,11 @@ public class Battle {
 		return flag;
 	}
 
+	public Lane getLane(int laneNumber) {
+		if (laneNumber < 1 || laneNumber > 3) {
+			throw new IllegalArgumentException("Lane number must be between 1 and 3");
+		}
+		Lane[] laneArray = lanes.toArray(new Lane[0]);
+		return laneArray[laneNumber - 1];
+	}
 }

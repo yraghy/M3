@@ -77,46 +77,25 @@ public class easyController {
         GridPane grid;
     }
 
-    public void buy(ActionEvent e) throws IOException {
-        AlertBox.weaponShop("weapon shop");
-//        currentLane =
-    }
 
     public void passTurn(ActionEvent e) throws IOException {
         easyGame.passTurn();
         updateLabels();
     }
 
-
-//        public void getLane() {
-//        lane1buy.setOnAction(e -> handleButtonPress(1));
-//        lane2buy.setOnAction(e -> handleButtonPress(2));
-//        lane3buy.setOnAction(e -> handleButtonPress(3));
-//    }
-//
-//    Scene root = startController.easyScene;
-//    Button C1buy = (Button)(root.lookup("#bBuy1"));
-//    Button C2buy = (Button)(root.lookup("#bBuy2"));
-//    Button C3buy = (Button)(root.lookup("#bBuy3"));
-//    Button C4buy = (Button)(root.lookup("#bBuy4"));
-//    GridPane lanes = (GridPane) root.lookup("#lanes");
-
-//    root.getChildren().addAll(C1buy, C2buy, C3buy,C4buy);
-
-
-
-
-
-//    public void getCode() {
-//        C1buy.setOnAction(e -> handleButtonPress(1));
-//        C2buy.setOnAction(e -> handleButtonPress(2));
-//        C3buy.setOnAction(e -> handleButtonPress(3));
-//        C4buy.setOnAction(e -> handleButtonPress(4));
-//    }
-
-//    public void buyWeapon(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-//
-//        easyGame.purchaseWeapon(getCode(), getLane());
-//
-//    }
+    public void buy(ActionEvent e) throws Exception {
+        SharedState sharedState = SharedState.getInstance();
+        sharedState.setLaneNumber(1);  // To set the value
+        AlertBox.weaponShop("weapon shop");
+    }
+    public void buy2(ActionEvent e) throws Exception {
+        SharedState sharedState = SharedState.getInstance();
+        sharedState.setLaneNumber(2);  // To set the value
+        AlertBox.weaponShop("weapon shop");
+    }
+    public void buy3(ActionEvent e) throws Exception {
+        SharedState sharedState = SharedState.getInstance();
+        sharedState.setLaneNumber(3);  // To set the value
+        AlertBox.weaponShop("weapon shop");
+    }
 }

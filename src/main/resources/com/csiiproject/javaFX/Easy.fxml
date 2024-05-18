@@ -41,9 +41,9 @@
                         <Image url="@lane%20path.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="eLaneSelect1" mnemonicParsing="false" onAction="#buy" text="Select Lane" GridPane.columnIndex="10" GridPane.halignment="CENTER" />
-                  <Button fx:id="eLaneSelect2" layoutX="966.0" layoutY="73.0" mnemonicParsing="false" onAction="#buy" text="Select Lane" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Button fx:id="eLaneSelect3" layoutX="966.0" layoutY="223.0" mnemonicParsing="false" onAction="#buy" text="Select Lane" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="eLaneSelect1" mnemonicParsing="false" onAction="#buy" prefHeight="25.0" prefWidth="89.0" text="Select Lane" GridPane.columnIndex="10" GridPane.halignment="CENTER" />
+                  <Button fx:id="eLaneSelect2" layoutX="966.0" layoutY="73.0" mnemonicParsing="false" onAction="#buy2" text="Select Lane" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="eLaneSelect3" layoutX="966.0" layoutY="223.0" mnemonicParsing="false" onAction="#buy3" text="Select Lane" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                   <ImageView fitHeight="120.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                      <image>
                         <Image url="@lane%20path.png" />
@@ -117,17 +117,17 @@
                   <Label fx:id="eDangerLane1" text="Danger Level:&#10;0" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
                   <Label fx:id="eDangerLane2" layoutX="980.0" layoutY="10.0" text="Danger Level:&#10;0" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
                   <Label fx:id="eDangerLane3" layoutX="966.0" layoutY="173.0" text="Danger Level: &#10;0" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
-                  <ImageView fitHeight="115.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="lane1weapon" fitHeight="115.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@wall2.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="115.0" fitWidth="95.0" layoutX="10.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                  <ImageView fx:id="lane2weapon" fitHeight="115.0" fitWidth="95.0" layoutX="10.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                      <image>
                         <Image url="@wall2.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="115.0" fitWidth="95.0" layoutX="10.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                  <ImageView fx:id="lane3weapon" fitHeight="115.0" fitWidth="95.0" layoutX="10.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                      <image>
                         <Image url="@wall2.jpg" />
                      </image>
