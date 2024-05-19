@@ -186,14 +186,16 @@ public class Battle {
         refillApproachingTitans();
     }
 
-    // Find the least dangerous lane
-    Lane leastDangerousLane = null;
-    for (Lane lane : lanes) {
-        if (leastDangerousLane == null || lane.getDangerLevel() < leastDangerousLane.getDangerLevel()) {
-            leastDangerousLane = lane;
-        }
-    }
+		if (lanes.isEmpty()) {
+			throw new IllegalStateException("No lanes available");
+		}
 
+		Lane leastDangerousLane = null;
+		for (Lane lane : lanes) {
+			if (leastDangerousLane == null || lane.getDangerLevel() < leastDangerousLane.getDangerLevel()) {
+				leastDangerousLane = lane;
+			}
+		}
     // Add Titans from approachingTitans to the least dangerous lane
     for (int i = 0; i < numberOfTitansPerTurn; i++) {
         // Refill the approachingTitans list if it's empty during the loop

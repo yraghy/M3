@@ -18,12 +18,18 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import com.csiiproject.javaFX.easyController;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.PriorityQueue;
 import game.engine.lanes.*;
+import javafx.embed.swing.SwingFXUtils;
+
+import javax.imageio.ImageIO;
 
 public class Controller {
 
@@ -39,9 +45,6 @@ public class Controller {
     public Controller() throws IOException {
         easyGame = new Battle();
     }
-
-
-
 
     public void mainMenuReturn(ActionEvent e) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("CleanStart.fxml"));
@@ -59,7 +62,6 @@ public class Controller {
         window.show();
     }
 
-    //Trial Methods
     public void loseTrial(ActionEvent e) throws IOException{AlertBox.gameOver("Game Over");}
 
     public void initialize() {
@@ -127,23 +129,25 @@ public class Controller {
         easyGame.purchaseWeapon(1 , lane);
 
 
-        Optional<Image> overlayImageOpt = loadImage("WeaponShop/antiTitanShell.png");
+        Optional<Image> overlayImageOpt = loadImage("/Users/weewee/IdeaProjects/M3/src/main/resources/com/csiiproject/javaFX/antiTitanShell.png");
         if (overlayImageOpt.isPresent()) {
             ImageView overlayImageView = new ImageView(overlayImageOpt.get());
             GridPane gridPane = (GridPane) lanes;
             gridPane.add(overlayImageView, 0, getRow());
         } else {
-            System.out.println("Image not found: WeaponShop/antiTitanShell.png");
+            System.out.println("Image not found: antiTitanShell.png");
         }
 
 
     }
 
     private Optional<Image> loadImage(String resourcePath) {
-        URL resourceUrl = getClass().getClassLoader().getResource(resourcePath);
-        if (resourceUrl != null) {
-            return Optional.of(new Image(resourceUrl.toExternalForm()));
-        } else {
+        try {
+            BufferedImage bufferedImage = ImageIO.read(new File(resourcePath));
+            Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+            return Optional.of(image);
+        } catch (IOException e) {
+            e.printStackTrace();
             return Optional.empty();
         }
     }
@@ -155,55 +159,52 @@ public class Controller {
         Lane lane = easyGame.getLane(laneNumber);
         easyGame.purchaseWeapon(2 , lane);
 
-        Optional<Image> overlayImageOpt = loadImage("WeaponShop/spear.png");
+        Optional<Image> overlayImageOpt = loadImage("spear.png");
         if (overlayImageOpt.isPresent()) {
             ImageView overlayImageView = new ImageView(overlayImageOpt.get());
             GridPane gridPane = (GridPane) lanes;
             gridPane.add(overlayImageView, 0, getRow());
         } else {
-            System.out.println("Image not found: WeaponShop/spear.png");
+            System.out.println("Image not found: spear.png");
         }
     }
 
     public void purchaseCannon(ActionEvent e) throws InvalidLaneException, InsufficientResourcesException {
         SharedState sharedState = SharedState.getInstance();
-        int laneNumber = sharedState.getLaneNumber();  // To get the value
+        int laneNumber = sharedState.getLaneNumber();
 
         Lane lane = easyGame.getLane(laneNumber);
         easyGame.purchaseWeapon(3 , lane);
 
-        Optional<Image> overlayImageOpt = loadImage("WeaponShop/cannon.png");
+        Optional<Image> overlayImageOpt = loadImage("cannon.png");
         if (overlayImageOpt.isPresent()) {
             ImageView overlayImageView = new ImageView(overlayImageOpt.get());
             GridPane gridPane = (GridPane) lanes;
             gridPane.add(overlayImageView, 0, getRow());
         } else {
-            System.out.println("Image not found: WeaponShop/cannon.png");
+            System.out.println("Image not found: cannon.png");
         }
     }
 
     public void purchaseTrap(ActionEvent e) throws InvalidLaneException, InsufficientResourcesException {
         SharedState sharedState = SharedState.getInstance();
-        int laneNumber = sharedState.getLaneNumber();  // To get the value
+        int laneNumber = sharedState.getLaneNumber();
 
         Lane lane = easyGame.getLane(laneNumber);
         easyGame.purchaseWeapon(4 , lane);
 
-        Optional<Image> overlayImageOpt = loadImage("WeaponShop/mine.png");
+        Optional<Image> overlayImageOpt = loadImage("mine.png");
         if (overlayImageOpt.isPresent()) {
             ImageView overlayImageView = new ImageView(overlayImageOpt.get());
             GridPane gridPane = (GridPane) lanes;
             gridPane.add(overlayImageView, 0, getRow());
         } else {
-            System.out.println("Image not found: WeaponShop/mine.png");
+            System.out.println("Image not found: mine.png");
         }
     }
 
-    public void closeShop(ActionEvent event) {
-        // Get the current stage
+        public void closeShop(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        // Close the stage
         stage.close();
     }
 

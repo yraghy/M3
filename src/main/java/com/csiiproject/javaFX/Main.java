@@ -19,7 +19,7 @@ public class Main extends Application {
     private ImageView backgroundImage;
 
     public void start(Stage window) throws IOException {
-        URL url = getClass().getResource("CleanStart.fxml");
+        URL url = getClass().getResource("cutScene.fxml");
         if (url == null) {
             throw new RuntimeException("Resource CleanStart.fxml not found");
         }

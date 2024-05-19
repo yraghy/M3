@@ -46,7 +46,7 @@ public class AlertBox {
         box.initModality(Modality.APPLICATION_MODAL);
         box.setTitle(title);
         box.setWidth(1052);
-        box.setHeight(670);
+        box.setHeight(640);
 
         Button b1 = (Button)(root.lookup("#bClose"));
         b1.setOnAction(e -> box.close());
